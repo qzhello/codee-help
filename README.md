@@ -16,6 +16,13 @@ Unified codebase assistant skill for architecture init, targeted code help, impa
 
 ### Install
 
+Clone the repository first:
+
+```bash
+git clone https://github.com/qzhello/codee-help.git
+cd codee-help
+```
+
 For Codex:
 
 1. Copy this directory to `~/.codex/skills/codee/`
@@ -27,11 +34,38 @@ For Codex:
    - `evals/`
    - `scripts/`
 
+Example:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -r ./ ~/.codex/skills/codee
+```
+
 For Claude Code:
 
 1. Create `.claude/commands/codee.md`
 2. Reuse the example in `examples/claude-command.codee.md`
 3. Route `/codee` requests to the appropriate mode
+
+Example:
+
+```bash
+mkdir -p ~/.claude/commands
+cp ./examples/claude-command.codee.md ~/.claude/commands/codee.md
+```
+
+For Gemini CLI:
+
+1. Create `~/.gemini/commands/`
+2. Copy the command template to `~/.gemini/commands/codee.toml`
+3. Use `/codee ...` inside Gemini CLI
+
+Example:
+
+```bash
+mkdir -p ~/.gemini/commands
+cp ./examples/gemini-command.codee.toml ~/.gemini/commands/codee.toml
+```
 
 ### Examples
 
@@ -67,6 +101,28 @@ Claude Code：
 1. 在项目里创建 `.claude/commands/codee.md`
 2. 参考 `examples/claude-command.codee.md`
 3. 统一从 `/codee` 入口分流到不同能力
+
+全局安装示例：
+
+```bash
+git clone https://github.com/qzhello/codee-help.git
+mkdir -p ~/.claude/commands
+cp ./codee-help/examples/claude-command.codee.md ~/.claude/commands/codee.md
+```
+
+Gemini CLI：
+
+1. 在全局命令目录创建 `~/.gemini/commands/`
+2. 复制 `examples/gemini-command.codee.toml` 到该目录
+3. 在 Gemini CLI 中通过 `/codee ...` 调用
+
+全局安装示例：
+
+```bash
+git clone https://github.com/qzhello/codee-help.git
+mkdir -p ~/.gemini/commands
+cp ./codee-help/examples/gemini-command.codee.toml ~/.gemini/commands/codee.toml
+```
 
 ### 调用示例
 
