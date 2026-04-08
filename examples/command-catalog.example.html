@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeaweedFS Command Manual</title>
+  <style>
+    :root { --bg:#f4f1ea; --ink:#1e1d1a; --muted:#686457; --card:#fffdf8; --line:#d7d0c1; --accent:#6e7f5b; }
+    body { margin:0; font:16px/1.5 Georgia, serif; color:var(--ink); background:linear-gradient(180deg,#f7f4ee, #ece6d9); }
+    .wrap { max-width:1200px; margin:0 auto; padding:32px 20px 80px; }
+    .hero { display:grid; gap:8px; margin-bottom:28px; }
+    .layout { display:grid; grid-template-columns:280px 1fr; gap:24px; }
+    .sidebar, .command-card { background:var(--card); border:1px solid var(--line); border-radius:18px; }
+    .sidebar { padding:18px; position:sticky; top:20px; height:fit-content; }
+    .command-card { padding:22px; margin-bottom:18px; }
+    .meta { color:var(--muted); }
+    ul { margin:0; padding-left:18px; }
+    a { color:var(--accent); text-decoration:none; }
+    table { width:100%; border-collapse:collapse; margin:12px 0; }
+    th, td { border-top:1px solid var(--line); padding:8px; text-align:left; vertical-align:top; }
+    pre { overflow:auto; background:#f1ede3; padding:12px; border-radius:12px; }
+    @media (max-width: 900px) { .layout { grid-template-columns:1fr; } .sidebar { position:static; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>SeaweedFS Command Manual</h1>
+      <div class="meta">Version v0.1 · Updated 2026-04-08 19:00:00 +0800</div>
+      <p>Operational command handbook for quick lookup of command purpose, parameters, examples, and risks.</p>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Commands</h2>
+        <ul><li><a href='#weed shell s3.bucket.list'>weed shell s3.bucket.list</a></li></ul>
+      </aside>
+      <main>
+    <section class="command-card" id="weed shell s3.bucket.list">
+      <h2>weed shell s3.bucket.list</h2>
+      <p class="meta">CLI · S3</p>
+      <p>List S3 buckets known to the system.</p>
+      <p><strong>Risk:</strong> low</p>
+      <p><strong>Source:</strong> weed/shell/command_s3_bucket_list.go Do</p>
+      <h3>Parameters</h3>
+      <table>
+        <thead><tr><th>Name</th><th>Required</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody><tr><td>-name</td><td>no</td><td></td><td>Optional bucket filter.</td></tr></tbody>
+      </table>
+      <h3>Examples</h3>
+      <pre><code>weed shell</code></pre><pre><code>s3.bucket.list</code></pre>
+    </section>
+    </main>
+    </div>
+  </div>
+</body>
+</html>

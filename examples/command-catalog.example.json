@@ -1,0 +1,28 @@
+{
+  "project": "SeaweedFS Command Manual",
+  "version": "v0.1",
+  "updated_at": "2026-04-08 19:00:00 +0800",
+  "commands": [
+    {
+      "name": "weed shell s3.bucket.list",
+      "kind": "CLI",
+      "summary": "List S3 buckets known to the system.",
+      "feature": "S3",
+      "source_file": "weed/shell/command_s3_bucket_list.go",
+      "source_symbol": "Do",
+      "risk": "low",
+      "params": [
+        {
+          "name": "-name",
+          "required": false,
+          "default": "",
+          "description": "Optional bucket filter."
+        }
+      ],
+      "examples": [
+        "weed shell",
+        "s3.bucket.list"
+      ]
+    }
+  ]
+}

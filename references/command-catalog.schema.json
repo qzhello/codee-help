@@ -1,0 +1,42 @@
+{
+  "title": "Codee Command Catalog",
+  "type": "object",
+  "required": ["project", "version", "updated_at", "commands"],
+  "properties": {
+    "project": { "type": "string" },
+    "version": { "type": "string" },
+    "updated_at": { "type": "string" },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "kind", "summary"],
+        "properties": {
+          "name": { "type": "string" },
+          "kind": { "type": "string" },
+          "summary": { "type": "string" },
+          "feature": { "type": "string" },
+          "source_file": { "type": "string" },
+          "source_symbol": { "type": "string" },
+          "risk": { "type": "string" },
+          "params": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "required": { "type": "boolean" },
+                "description": { "type": "string" },
+                "default": { "type": "string" }
+              }
+            }
+          },
+          "examples": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
